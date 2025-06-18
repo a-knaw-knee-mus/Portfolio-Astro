@@ -15,5 +15,6 @@ export default defineConfig({
     }]
   },
 
-  site: 'https://muhammad-mehdi-ali.github.io',
+  site: 'https://a-knaw-knee-mus.github.io',
+  base: '/astro-portfolio',
 });
