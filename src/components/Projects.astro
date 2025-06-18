@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import Project from './Project.astro';
+
+// Get all projects and sort by date (newest first)
+const allProjects = await getCollection('projects');
+const sortedProjects = allProjects.sort(
+  (a, b) => a.data.index - b.data.index
+);
+---
+
+<main class="flex flex-col gap-8 max-w-6xl mx-auto mb-4">
+  <div>
+    <h1 class="text-3xl font-bold">Projects</h1>
+    <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+      Selected projects from over the years.
+    </p>
+  </div>
+
+  <div class="flex flex-col gap-3">
+    {sortedProjects.map((project) => (
+      <Project project={project} />
+    ))}
+  </div>
+</main>

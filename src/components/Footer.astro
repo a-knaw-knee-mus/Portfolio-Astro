@@ -1,0 +1,99 @@
+---
+const quotes = [
+    {
+        quote: "Pulvis et umbra sumus",
+        meaning: "We are but dust and shadow",
+    },
+    {
+        quote: "Omnis vir lupus",
+        meaning: "Every man is a wolf",
+    },
+    {
+        quote: "Per aspera ad astra",
+        meaning: "Through hardship to the stars",
+    },
+    {
+        quote: "Hic sunt leones",
+        meaning: "Here are lions",
+    },
+]
+
+const now = new Date();
+const startOfYear = new Date(now.getFullYear(), 0, 0);
+
+const diff = now.getTime() - startOfYear.getTime();
+
+const oneDay = 1000 * 60 * 60 * 24;
+const dayOfYear = Math.floor(diff / oneDay);
+
+const quoteIndex = dayOfYear % quotes.length;
+
+const quoteOfTheDay = quotes[quoteIndex];
+---
+
+<footer
+    class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 py-4 border-t border-neutral-200"
+>
+    <a class="italic group relative flex items-center" href="https://www.goodreads.com/book/show/15839976-red-rising" target="_blank">
+        <p class="text-m">{quoteOfTheDay.quote}</p>
+        <p class="ml-2 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 ease-in-out text-sm text-neutral-300 whitespace-nowrap">
+            "{quoteOfTheDay.meaning}"
+        </p>
+    </a>
+    <ul class="font-sm flex gap-4 flex-row">
+        <li></li>
+            <a
+                class="flex items-center opacity-0 hover:opacity-100 transition-opacity"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://anilist.co/user/aKnawKneeMus"
+                >Anilist</a
+            >
+        </li>
+        <li>
+            <a
+                class="flex items-center hover-pulse"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="mailto:muhammad@colonist.io"
+                >Email</a
+            >
+        </li>
+        <li>
+            <a
+                class="flex items-center hover-pulse"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://read.cv/jonbarber"
+                >CV</a
+            >
+        </li>
+        <li>
+            <a
+                class="flex items-center hover-pulse"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://github.com/a-knaw-knee-mus"
+                >GitHub</a
+            >
+        </li>
+        <li>
+            <a
+                class="flex items-center hover-pulse"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://www.linkedin.com/in/muhammad-mehdi-ali"
+                >LinkedIn</a
+            >
+        </li>
+        <li>
+            <a
+                class="flex items-center hover-pulse"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://www.chess.com/member/poggywoggy"
+                ><span>Chess</span></a
+            >
+        </li>
+    </ul>
+</footer>

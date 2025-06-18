@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+import project1Image from './pfp.png'
+// This Astro component creates an SVG circle with a dynamic
+// rainbow gradient and continuous rotation.
+// An image appears below it on hover, absolutely positioned.
+---
+<div class="relative flex items-center justify-center rounded-lg">
+  <div class="h-6 w-6 group cursor-help"> {/* Add the group class here */}
+    <svg class="animated-circle rounded-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="rainbowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" id="stop1" stop-color="hsl(120, 100%, 50%)" />
+          <stop offset="100%" id="stop2" stop-color="hsl(60, 100%, 50%)" />
+        </linearGradient>
+      </defs>
+      <circle cx="50" cy="50" r="40" fill="url(#rainbowGradient)" />
+    </svg>
+    <div class="absolute top-full left-0 mt-2 w-30 h-auto transition-opacity sm:opacity-0 duration-200 group-hover:opacity-100 group-hover:animate-flip-down group-hover:animate-duration-200 pointer-events-none">
+      <Image src={project1Image} alt="Headshot" class="rounded-full shadow-md object-cover" />
+    </div>
+  </div>
+</div>
+<style>
+  .animated-circle {
+    transform-origin: center center;
+    transition: transform 0.05s linear;
+  }
+</style>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const stop1 = document.getElementById('stop1');
+    const stop2 = document.getElementById('stop2');
+    const svgElement = document.querySelector('.animated-circle');
+    let hue1 = 120;
+    let hue2 = 60;
+    let rotation = 0;
+    const rotationSpeed = 0.6;
+    const colorSpeed = 0.2;
+    function animate() {
+      hue1 = (hue1 + colorSpeed) % 360;
+      hue2 = (hue2 + colorSpeed) % 360;
+      stop1.setAttribute('stop-color', `hsl(${hue1}, 100%, 50%)`);
+      stop2.setAttribute('stop-color', `hsl(${hue2}, 100%, 50%)`);
+      rotation += rotationSpeed;
+      svgElement.style.transform = `rotate(${rotation}deg)`;
+      requestAnimationFrame(animate);
+    }
+    animate();
+  });
+</script>

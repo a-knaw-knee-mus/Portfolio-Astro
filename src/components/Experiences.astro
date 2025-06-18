@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import Project from './Project.astro';
+import Experience from './Experience.astro';
+
+// Get all projects and sort by date (newest first)
+const allExperience = await getCollection('experience');
+const sortedExperience = allExperience.sort(
+  (a, b) => a.data.index - b.data.index
+);
+---
+
+<main class="flex flex-col gap-8 max-w-6xl mx-auto py-14">
+  <h1 class="text-3xl font-bold">Experience</h1>
+
+  <div class="flex flex-col gap-3">
+    {sortedExperience.map((experience) => (
+      <Experience experience={experience} />
+    ))}
+  </div>
+</main>

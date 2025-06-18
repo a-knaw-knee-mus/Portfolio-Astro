@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import "tailwindcss-animated";
+
+::selection {
+    background-color: white; /* Your desired highlight color (e.g., magenta) */
+    color: black; /* Text color when highlighted (e.g., white) */
+}
+
+@layer utilities {
+  .hover-pulse {
+    @apply hover:animate-pulse hover:animate-duration-1200;
+  }
+}
