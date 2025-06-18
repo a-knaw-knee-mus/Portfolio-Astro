@@ -14,4 +14,6 @@ export default defineConfig({
         cssVariable: '--font-yantramanav',
     }]
   },
+
+  site: 'https://muhammad-mehdi-ali.github.io',
 });
