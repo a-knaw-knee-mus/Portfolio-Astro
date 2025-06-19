@@ -3,7 +3,7 @@ title: "JavaFX Bookstore"
 description: "Bookstore App using JavaFX wth an interactive UI"
 image: "./demo.png"
 tags: ["Java", "JavaFX"]
-index: 9
+index: 10
 ---
 
 - Utilizes several OOP designs including the Singleton, and State design pattern

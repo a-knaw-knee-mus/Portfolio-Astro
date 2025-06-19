@@ -6,7 +6,7 @@ tags: ["Python", "Pygame"]
 github: "https://github.com/a-knaw-knee-mus/Hanoi-Tower-Pygame"
 gif: "https://imgur.com/a/1ynYaeZ"
 youtube: "https://www.youtube.com/watch?v=JD-BEbR0iSM"
-index: 8
+index: 9
 ---
 
 - Move the tower from one stack to another, one block at a time, without stacking a larger block onto a smaller one
