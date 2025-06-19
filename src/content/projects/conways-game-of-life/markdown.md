@@ -1,6 +1,6 @@
 ---
 title: "Conway's Game of Life"
-description: "Cell automation simulator following Conway's Game of Life Constraints"
+description: "Cellular Automation simulator based on Conway's Game of Life"
 image: "./demo.png"
 tags: ["C++", "SFML"]
 github: "https://github.com/a-knaw-knee-mus/Conways-Game-of-Life"

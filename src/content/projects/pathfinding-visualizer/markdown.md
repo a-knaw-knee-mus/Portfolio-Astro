@@ -1,6 +1,6 @@
 ---
 title: "Pathfinding Visualizer"
-description: "Visualizes famous pathfinding algorithms using a grid and animations"
+description: "Visualizes famous grid pathfinding algorithms"
 image: "./demo.png"
 tags: ["C++", "SFML"]
 github: "https://github.com/yourusername/weather-dashboard"
