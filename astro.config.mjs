@@ -15,6 +15,5 @@ export default defineConfig({
     }]
   },
 
-  site: 'https://a-knaw-knee-mus.github.io',
-  base: '/Portfolio-Astro',
+  site: 'https://aknawkneemus.com',
 });
