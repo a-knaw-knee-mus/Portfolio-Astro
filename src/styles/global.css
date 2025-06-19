@@ -2,8 +2,13 @@
 @import "tailwindcss-animated";
 
 ::selection {
-    background-color: white; /* Your desired highlight color (e.g., magenta) */
-    color: black; /* Text color when highlighted (e.g., white) */
+    background-color: white;
+    color: black;
+}
+
+.prose ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
 }
 
 @layer utilities {
