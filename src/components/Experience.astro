@@ -29,9 +29,9 @@ const { Content } = await experience.render();
     <h3 class="text-md font-semibold text-xl">{experience.data.company}</h3>
     <svg class="group-hover:-translate-y-[2px] group-hover:transition-transform" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill={experience.data.accentColor} d="m16 8.4l-8.9 8.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7L14.6 7H7q-.425 0-.712-.288T6 6t.288-.712T7 5h10q.425 0 .713.288T18 6v10q0 .425-.288.713T17 17t-.712-.288T16 16z"/></svg>
   </a>
-  <div class="flex gap-2 text-gray-400 text-lg">
+  <div class="flex flex-col sm:flex-row sm:gap-2 text-gray-400 text-lg">
     <h3 class="text-md">{experience.data.position}</h3>
-    |
+    <span class="hidden sm:block">|</span>
     <h3 class="text-md">{formattedStartDate} - {formattedEndDate}</h3>
   </div>
 </div>
