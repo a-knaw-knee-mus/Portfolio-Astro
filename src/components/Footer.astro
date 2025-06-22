@@ -1,44 +1,9 @@
----
-const quotes = [
-    {
-        quote: "Pulvis et umbra sumus",
-        meaning: "We are but dust and shadow",
-    },
-    {
-        quote: "Omnis vir lupus",
-        meaning: "Every man is a wolf",
-    },
-    {
-        quote: "Per aspera ad astra",
-        meaning: "Through hardship to the stars",
-    },
-    {
-        quote: "Hic sunt leones",
-        meaning: "Here are lions",
-    },
-]
-
-const now = new Date();
-const startOfYear = new Date(now.getFullYear(), 0, 0);
-
-const diff = now.getTime() - startOfYear.getTime();
-
-const oneDay = 1000 * 60 * 60 * 24;
-const dayOfYear = Math.floor(diff / oneDay);
-
-const quoteIndex = dayOfYear % quotes.length;
-
-const quoteOfTheDay = quotes[quoteIndex];
----
-
 <footer
     class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 py-4 border-t border-neutral-200"
 >
-    <a class="flex italic group gap-2 relative items-center whitespace-nowrap" href="https://www.goodreads.com/book/show/15839976-red-rising" target="_blank">
-        <p class="text-m">{quoteOfTheDay.quote}</p>
-        <p class="sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 ease-in-out text-sm text-neutral-300">
-            "{quoteOfTheDay.meaning}"
-        </p>
+    <a id="quote-link" class="flex italic group gap-2 relative items-center whitespace-nowrap" href="https://www.goodreads.com/book/show/15839976-red-rising" target="_blank">
+        <p class="text-m" id="quote-text"></p>
+        <p class="sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 ease-in-out text-sm text-neutral-300" id="quote-meaning"></p>
     </a>
     <ul class="font-sm flex gap-2 sm:gap-4 flex-row-reverse sm:flex-row">
         <li>
@@ -97,3 +62,42 @@ const quoteOfTheDay = quotes[quoteIndex];
         </li>
     </ul>
 </footer>
+
+<script>
+    // This script runs in the browser
+    const quotes = [
+        {
+            quote: "Pulvis et umbra sumus",
+            meaning: "We are but dust and shadow",
+        },
+        {
+            quote: "Omnis vir lupus",
+            meaning: "Every man is a wolf",
+        },
+        {
+            quote: "Per aspera ad astra",
+            meaning: "Through hardship to the stars",
+        },
+        {
+            quote: "Hic sunt leones",
+            meaning: "Here are lions",
+        },
+    ];
+
+    const now = new Date();
+    const startOfYear = new Date(now.getFullYear(), 0, 1);
+    const diff = now.getTime() - startOfYear.getTime();
+    const oneDay = 1000 * 60 * 60 * 24;
+    const dayOfYear = Math.floor(diff / oneDay);
+
+    const quoteIndex = dayOfYear % quotes.length;
+    const quoteOfTheDay = quotes[quoteIndex];
+
+    const quoteTextElement = document.getElementById('quote-text');
+    const quoteMeaningElement = document.getElementById('quote-meaning');
+
+    if (quoteTextElement && quoteMeaningElement) {
+        quoteTextElement.textContent = quoteOfTheDay.quote;
+        quoteMeaningElement.textContent = `"${quoteOfTheDay.meaning}"`;
+    }
+</script>
