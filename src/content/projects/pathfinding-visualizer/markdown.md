@@ -3,7 +3,7 @@ title: "Pathfinding Visualizer"
 description: "Visualizes famous grid pathfinding algorithms"
 image: "./demo.png"
 tags: ["C++", "SFML"]
-github: "https://github.com/yourusername/weather-dashboard"
+github: "https://github.com/a-knaw-knee-mus/Grid-Pathfinding-Visualizer"
 gif: "https://imgur.com/a/OcqEzYK"
 youtube: "https://www.youtube.com/watch?v=X2-e5VVVJGA"
 index: 4
