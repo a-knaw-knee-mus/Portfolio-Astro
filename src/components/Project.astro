@@ -49,7 +49,7 @@ const { Content } = await project.render();
       {project.data.tags && project.data.tags.length > 0 && (
         <div class="flex flex-wrap gap-2 mt-2">
           {project.data.tags.map(tag => (
-            <span class="px-2 py-1 bg-gray-400 text-gray-800 text-sm rounded-full transition-colors duration-200 hover:bg-gray-300 cursor-default">
+            <span class="px-1 py-0.5 bg-gray-400 text-gray-800 text-sm rounded-md transition-colors duration-200 hover:bg-gray-300 cursor-default">
               {tag}
             </span>
           ))}
